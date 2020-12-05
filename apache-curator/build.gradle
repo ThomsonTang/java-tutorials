@@ -1,0 +1,12 @@
+ext {
+    set('curatorVersion', '4.0.1')
+    set('zookeeperVersion', '3.4.10')
+}
+dependencies {
+    implementation("org.apache.zookeeper:zookeeper:${zookeeperVersion}") {
+        exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+    }
+    implementation("org.apache.curator:curator-recipes:${curatorVersion}") {
+        exclude group: 'org.apache.zookeeper', module: 'zookeeper'
+    }
+}

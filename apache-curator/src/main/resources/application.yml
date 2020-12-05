@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: apache-curator
+  profiles:
+    active: develop
+
+zookeeper:
+  connectString: zk1,zk2,zk3
+  retryCount: 5
+  elapsedTimeMs: 5000
+  sessionTimeoutMs: 6000
+  connectionTimeoutMs: 5000

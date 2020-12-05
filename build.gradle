@@ -1,0 +1,56 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.0' apply false
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE' apply false
+    id 'org.asciidoctor.convert' version '1.5.8' apply false
+}
+
+ext {
+    set('snippetsDir', file("build/generated-snippets"))
+    set('slf4jVersion', '1.7.25')
+    set('logbackVersion', '1.1.11')
+    set('lang3Version', '3.8')
+    set('guavaVersion', '28.0-jre')
+}
+
+subprojects {
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.asciidoctor.convert'
+    apply plugin: 'java'
+
+    group = 'com.tt.java'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '1.8'
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+        implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+        implementation "org.apache.commons:commons-lang3:${lang3Version}"
+        implementation "com.google.guava:guava:${guavaVersion}"
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    test {
+        outputs.dir snippetsDir
+        useJUnitPlatform()
+    }
+
+    asciidoctor {
+        inputs.dir snippetsDir
+        dependsOn test
+    }
+}
