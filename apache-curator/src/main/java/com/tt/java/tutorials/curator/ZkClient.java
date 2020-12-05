@@ -1,4 +1,4 @@
-package com.tt.java.tutorial.curator;
+package com.tt.java.tutorials.curator;
 
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;

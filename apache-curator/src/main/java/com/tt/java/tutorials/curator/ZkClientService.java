@@ -1,4 +1,4 @@
-package com.tt.java.tutorial.curator;
+package com.tt.java.tutorials.curator;
 
 import org.apache.curator.framework.recipes.cache.ChildData;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheListener;

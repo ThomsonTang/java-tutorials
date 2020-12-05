@@ -1,4 +1,4 @@
-package com.tt.java.tutorial.curator;
+package com.tt.java.tutorials.curator;
 
 import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;

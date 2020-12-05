@@ -1,4 +1,4 @@
-package com.tt.java.tutorial.curator;
+package com.tt.java.tutorials.curator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

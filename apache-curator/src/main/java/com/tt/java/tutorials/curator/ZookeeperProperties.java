@@ -1,4 +1,4 @@
-package com.tt.java.tutorial.curator;
+package com.tt.java.tutorials.curator;
 
 /**
  * 类说明
