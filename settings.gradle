@@ -2,4 +2,5 @@ rootProject.name = 'java-tutorials'
 include 'apache-curator'
 include 'core-java'
 include 'guava'
+include 'image-utils'
 
