@@ -3,4 +3,6 @@ include 'apache-curator'
 include 'core-java'
 include 'guava'
 include 'image-utils'
+include 'spring-data'
+include 'spring-rabbitmq'
 
